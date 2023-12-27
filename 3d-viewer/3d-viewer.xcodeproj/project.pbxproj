@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		812BCA322B353E680003C900 /* camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 812BCA302B353E680003C900 /* camera.cpp */; };
+		812BCA352B3B914D0003C900 /* rasterizer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 812BCA332B3B914D0003C900 /* rasterizer.cpp */; };
 		81ED952D2B2EC4D300D0F83F /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81ED952C2B2EC4D300D0F83F /* main.cpp */; };
 		81ED95372B2ED3A600D0F83F /* geometry.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81ED95352B2ED3A600D0F83F /* geometry.cpp */; };
 /* End PBXBuildFile section */
@@ -27,6 +28,8 @@
 /* Begin PBXFileReference section */
 		812BCA302B353E680003C900 /* camera.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = camera.cpp; sourceTree = "<group>"; };
 		812BCA312B353E680003C900 /* camera.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = camera.hpp; sourceTree = "<group>"; };
+		812BCA332B3B914D0003C900 /* rasterizer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = rasterizer.cpp; sourceTree = "<group>"; };
+		812BCA342B3B914D0003C900 /* rasterizer.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = rasterizer.hpp; sourceTree = "<group>"; };
 		81ED951F2B2EC46400D0F83F /* 3d-viewer */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "3d-viewer"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81ED952C2B2EC4D300D0F83F /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		81ED952F2B2ECB8E00D0F83F /* Shared */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Shared; path = ../../../../Shared; sourceTree = "<group>"; };
@@ -79,6 +82,7 @@
 				81ED952C2B2EC4D300D0F83F /* main.cpp */,
 				81ED95352B2ED3A600D0F83F /* geometry.cpp */,
 				812BCA302B353E680003C900 /* camera.cpp */,
+				812BCA332B3B914D0003C900 /* rasterizer.cpp */,
 			);
 			path = source;
 			sourceTree = "<group>";
@@ -88,6 +92,7 @@
 			children = (
 				812BCA312B353E680003C900 /* camera.hpp */,
 				81ED95362B2ED3A600D0F83F /* geometry.hpp */,
+				812BCA342B3B914D0003C900 /* rasterizer.hpp */,
 			);
 			path = header;
 			sourceTree = "<group>";
@@ -161,6 +166,7 @@
 			files = (
 				81ED952D2B2EC4D300D0F83F /* main.cpp in Sources */,
 				812BCA322B353E680003C900 /* camera.cpp in Sources */,
+				812BCA352B3B914D0003C900 /* rasterizer.cpp in Sources */,
 				81ED95372B2ED3A600D0F83F /* geometry.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

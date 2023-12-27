@@ -32,12 +32,12 @@ void camera::buildTansforms()
     _forward = glm::normalize(_position - _lookAt);
     _right = glm::cross(glm::vec3(0,1,0), _forward);
     _up = glm::cross(_forward, _right);
-    
-    _cameraToWorld[0] = { _right.x, _up.x, _forward.x, _position.x };
-    _cameraToWorld[1] = { _right.y, _up.y, _forward.y, _position.y };
-    _cameraToWorld[2] = { _right.z, _up.z, _forward.z, _position.z };
-    _cameraToWorld[3] = { 0, 0, 0, 1};
-    
+
+    _cameraToWorld[0] = { _right.x, _right.y, _right.z, 0 };
+    _cameraToWorld[1] = { _up.x, _up.y, _up.z, 0};
+    _cameraToWorld[2] = { _forward.x, _forward.y, _forward.z, 0};
+    _cameraToWorld[3] = { _position.x, _position.y, _position.z, 1};
+
     _worldToCamera = glm::inverse(_cameraToWorld);
 }
 
@@ -50,11 +50,14 @@ glm::vec3 camera::worldToCamera(glm::vec3& pW)
 
 void camera::calculateScreenSpace()
 {
+    //_t = _imageHeight / 2;
     _t = _near * std::tan(_yFOV / 2);
     _b = -_t;
-    
+        
+    //_r = _imageWidth / 2;
     _r = _near * std::tan(_xFOV / 2);
     _l = -_r;
+    
 }
 
 glm::vec3 camera::cameraToScreen(glm::vec3& pCam)
@@ -76,8 +79,8 @@ glm::vec3 camera::screenToNDC(glm::vec3& pScreen)
 
 glm::vec3 camera::NDCToRaster(glm::vec3 &pNDC)
 {
-    float xRast = (pNDC.x + 1) / 2 * _imageWidth;
-    float yRast = (pNDC.y + 1) / 2 * _imageHeight;
+    float xRast = ((pNDC.x + 1) / 2) * _imageWidth;
+    float yRast = ((1 - pNDC.y )) / 2 * _imageHeight;
     float zRast = -pNDC.z;
     
     return glm::vec3(xRast, yRast, zRast);
